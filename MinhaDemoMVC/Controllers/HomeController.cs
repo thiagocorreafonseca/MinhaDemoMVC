@@ -25,9 +25,9 @@ namespace MinhaDemoMVC.Controllers
                 Valor = 20000
             };
 
-            return RedirectToAction("Privacy", filme);
+            //return RedirectToAction("Privacy", filme);
             
-            //return View();
+            return View();
         }
 
         //[Route("privacidade")]
@@ -45,7 +45,7 @@ namespace MinhaDemoMVC.Controllers
             return View();
         }
 
-        public IActionResult Privacy(Filme filme)
+        public IActionResult Privacy(/*Filme filme*/)
         {
             //return Json("{'nome:'thiago}");
 
@@ -55,7 +55,7 @@ namespace MinhaDemoMVC.Controllers
 
             //return Content("Qualquer coisa");
 
-            
+            /*
             if (ModelState.IsValid)
             {
 
@@ -65,7 +65,7 @@ namespace MinhaDemoMVC.Controllers
             {
                 Console.WriteLine(error.ErrorMessage);
             }
-            
+            */
             return View();
         }
 
