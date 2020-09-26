@@ -27,7 +27,7 @@ namespace MinhaDemoMVC.Models
  
         [Range(1, 1000, ErrorMessage = "Valor entre 1 e 1000")]
         [Required(ErrorMessage = "Preencha o campo Valor")]
-        [Column(TypeName = "decimal(18, 2)"]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Valor { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Avaliação")]

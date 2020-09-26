@@ -13,9 +13,21 @@ namespace MinhaDemoMVC.Controllers
         //[Route("")]
         //[Route("pagina-inicial")]
         //[Route("pagina-inicial/{id:int}/{categoria:guid}")]
-        public IActionResult Index(int id, Guid categoria)
+        public IActionResult Index(/*int id, Guid categoria*/)
         {
-            return View();
+            
+            var filme = new Filme
+            {
+                Titulo = "Oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 20000
+            };
+
+            return RedirectToAction("Privacy", filme);
+            
+            //return View();
         }
 
         //[Route("privacidade")]
@@ -30,11 +42,10 @@ namespace MinhaDemoMVC.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
             //return Json("{'nome:'thiago}");
 
@@ -44,6 +55,17 @@ namespace MinhaDemoMVC.Controllers
 
             //return Content("Qualquer coisa");
 
+            
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            foreach (var error in ModelState.Values.SelectMany(m => m.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
+            
             return View();
         }
 
